@@ -9,8 +9,7 @@ class Solution {
         rev=(rev*10)+x%10;
         x/=10;
        }
-       System.out.println(rev);
-        if(rev==temp) return true;
-        else return false;
+       return rev==temp;
+       
     }
 }
