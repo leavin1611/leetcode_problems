@@ -9,8 +9,8 @@ double findMaxAverage(int* nums, int n, int k) {
         {
             cur_avg=(double)sum/k;
             if(cur_avg>mxavg)mxavg=cur_avg;
-            sum-=nums[l];
-            l++;
+            sum-=nums[l++];
+            
         }
         r++;
     }return mxavg;
