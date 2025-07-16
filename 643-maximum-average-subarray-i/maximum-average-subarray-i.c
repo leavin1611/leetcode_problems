@@ -1,30 +1,25 @@
+#include<float.h>
 double findMaxAverage(int* nums, int n, int k) {
-    double  mxsum;
-    int sum=0;
-    for (int i=0;i<k;i++)
+    double  mxavg=-DBL_MAX,cur_avg=0;
+    int sum=0,l=0,r=0;
+    while(r<n)
     {
-        sum=sum+nums[i];
-    }
-    mxsum=sum;
-   for(int i=k;i<n;i++)
-    {sum=sum-nums[i-k];
-    sum=sum+nums[i];
-    if(sum>mxsum)
-    
-    {mxsum=sum;
-    }
-    
-    printf("%f\t\n",mxsum);
-    
-    
-    
+        sum+=nums[r];
+        if(r>=k-1)
+        {
+            cur_avg=(double)sum/k;
+            if(cur_avg>mxavg)mxavg=cur_avg;
+            sum-=nums[l];
+            l++;
+        }
+        r++;
+    }return mxavg;
 
     
+   
 
 
-    
-
-    }return (double)mxsum/(double)k;
+   
 
     
 }
