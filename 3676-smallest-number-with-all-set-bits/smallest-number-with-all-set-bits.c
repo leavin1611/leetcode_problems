@@ -1,13 +1,5 @@
 int smallestNumber(int n) {
-    int count=0;
-
-    while(n!=1)
-    {
-        n=n/2;
-        count++;
-    }
-
-    return (int)pow(2,count+1)-1;
-    
-
+    int res = 1;
+    while (res < n+1) res *= 2;
+    return res-1;
 }
