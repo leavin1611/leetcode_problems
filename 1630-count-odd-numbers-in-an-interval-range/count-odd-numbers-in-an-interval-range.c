@@ -1,4 +1,3 @@
-
 int countOdds(int low, int high){
     int count=0;
     int k=low,n=high;
